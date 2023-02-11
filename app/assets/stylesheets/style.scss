@@ -1,0 +1,71 @@
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+.font-light {
+    font-weight: 400 !important;
+}
+
+.font-medium {
+    font-weight: 500 !important;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+.text-xl {
+    font-size: 18px !important;
+}
+
+.text-lg {
+    font-size: 16px !important;
+}
+
+.text-md {
+    font-size: 14px !important;
+}
+
+.text-sm {
+    font-size: 12px !important;
+}
+
+.text-xs {
+    font-size: 10px !important;
+}
+
+.decoration-none {
+    text-decoration: none!important;
+}
+
+.decoration-none:hover {
+    text-decoration: underline!important;
+}
+
+.home-hd{
+    font-size: 120px;
+    line-height: 100px;
+    color: black;
+}
+
+.home-hd:last-child{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1557682224-5b8590cd9ec5?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjF9');
+}
+
+.mt-16 {
+    margin-top: 16vmin;
+}
+.mt-7 {
+    margin-top: 7vmin;
+}
+
+.container-xs {
+    max-width: 460px;
+}

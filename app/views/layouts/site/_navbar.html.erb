@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg bg-white rounded" aria-label="Thirteenth navbar example">
+    <div class="container-fluid pt-3 pb-3">
+        <div class="container">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11" aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
+                <a class="navbar-brand col-lg-3 me-0 font-medium text-md" href="/">Student WayIn</a>
+                <ul class="navbar-nav col-lg-6 justify-content-lg-center">
+                    <li class="nav-item ps-3 pe-3 position-relative" id="resources">
+                        <a class="nav-link active font-medium text-md" type="button" data-bs-toggle="dropdown" href="/" onclick="activeDropdown()">
+                            Product
+                            <svg class="text-gray-400 ml-1" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu align-items-stretch p-3 rounded-3 shadow-lg w-600px" id="resources-dropdown" style="min-width: 265px;">
+                            <nav class="d-grid gap-2 col-12">
+                                <a href="/" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
+                                    <div>
+                                        <strong class="d-block">Features</strong>
+                                        <small>Take a tour through the product</small>
+                                    </div>
+                                </a>
+                                <a href="/" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
+                                    <div>
+                                        <strong class="d-block">Support</strong>
+                                        <small>Get help from our support crew</small>
+                                    </div>
+                                </a>
+                            </nav>
+                        </div>
+                    </li>
+                    <li class="nav-item ps-3 pe-3">
+                        <a class="nav-link font-medium text-md" href="/">Explore</a>
+                    </li>
+                    <li class="nav-item ps-3 pe-3 position-relative" id="resources">
+                        <a class="nav-link font-medium text-md" type="button" data-bs-toggle="dropdown" href="/" onclick="activeDropdown()">
+                            Resources
+                            <svg class="text-gray-400 ml-1" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu align-items-stretch p-3 rounded-3 shadow-lg w-600px" id="resources-dropdown" style="min-width: 265px;">
+                            <nav class="d-grid gap-2 col-12">
+                                <a href="/" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
+                                    <div>
+                                        <strong class="d-block">Forum</strong>
+                                        <small>Talk with others users about your doubts</small>
+                                    </div>
+                                </a>
+                                <a href="/" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
+                                    <div>
+                                        <strong class="d-block">Support</strong>
+                                        <small>Get help from our support crew</small>
+                                    </div>
+                                </a>
+                            </nav>
+                        </div>
+                    </li>
+                    <li class="nav-item ps-3 pe-3">
+                        <a class="nav-link font-medium text-md" href="/">Pricing</a>
+                    </li>
+                </ul>
+                <div class="d-lg-flex col-lg-3 justify-content-lg-end align-items-center">
+                        <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-dark font-medium text-sm" %>
+                        <button class="btn btn-link font-medium decoration-none me-2">
+                            <%= link_to "Log in", new_user_registration_path, :class => "font-light text-md text-secondary decoration-none" %>
+                        </button>
+                        <%= button_to "Get Started — free", new_user_session_path, :class => "btn btn-dark font-medium text-sm", :style => "line-height: 20px;" %>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
