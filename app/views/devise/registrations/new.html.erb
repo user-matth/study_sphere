@@ -2,7 +2,11 @@
   <div class="d-flex justify-content-center flex-column align-items-center mt-7">
 
     <h2 class="font-bold">Create your SWI account</h2>
-    <p class="text-center">An Account is what you need to access all SWI services. </br>Already have an Account? <%= link_to "Login here", new_session_path(resource_name), :class => "decoration-none"%> <i class="bi bi-chevron-right text-sm text-primary"></i> </p>
+    <p class="text-center">An Account is what you need to access all SWI services. </br>Already have an Account? <%= link_to "Login here", new_session_path(resource_name), :class => "decoration-none"%> 
+      <svg class="text-gray-400 text-primary" style="transform: rotate(270deg);" height="16px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+      </svg>
+    </p>
 
     <div class="container-xs">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -26,7 +30,7 @@
           <%= f.password_field :password_confirmation, autocomplete: "new-password", :class => "form-control" %>
         </div>
 
-        <div class="d-block pt-3 pb-3 text-center ">
+        <div class="d-block pt-3 pb-3 text-justify lh-1">
           <small class="text-sm"><i class="bi bi-info-circle me-1"></i> We use your SWI Account information to enable secure login and access to your data. SWI records certain data for security, support, and reporting purposes. If you agree, SWI may also use your SWI Account information to send you emails and marketing communications, including based on your use of SWI services.</small>
         </div>
         

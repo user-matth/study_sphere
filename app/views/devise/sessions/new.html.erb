@@ -2,13 +2,13 @@
   <h2 class="font-bold mt-4">Sign in to continue with more security.</h2>
   <div class="d-flex justify-content-center flex-column align-items-center">
 
-    <h3 class="text-center mt-5 font-semibold text-body-tertiary">Sign in to your Student WayIN </h3>
+    <h3 class="text-center mt-5 font-semibold text-body-tertiary">Sign in to your Student WayIn </h3>
 
     <div class="container-xs mt-3">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <div class="input-group rounded-top mb-0">
-            <%= f.email_field :email, autofocus: true, autocomplete: "off", :class => "form-control border border-bottom-0 border border-end-0", :style => "border-radius: 8px 8px 0 0", :placeholder => "Email" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "off", :class => "form-control border border-bottom-0 border", :style => "border-radius: 8px 8px 0 0", :placeholder => "Email" %>
           </div>
         </div>
         <div class="field">
