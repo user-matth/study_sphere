@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 pt-4">
+      <div class="p-3">
+        <h2 class="font-bold">Ask a public question</h2>
+        <%= render "form", forum: @forum %>
+      </div>
+    </div>
+    <div class="col-lg-4 border-start pt-4">
+      <div class="p-3">
+        <%= link_to "Back to forums", forums_path, :class => "btn btn-outline-dark text-md fw-bold ps-3 pe-3 w-100 rounded-pill" %>
+      </div>
+    </div>
+  </div>
+</div>

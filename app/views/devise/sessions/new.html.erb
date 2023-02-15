@@ -1,8 +1,8 @@
 <div class="container">
-  <h2 class="font-bold mt-4">Sign in to continue with more security.</h2>
+  <h2 class="font-bold mt-4">Sign in to continue with security.</h2>
   <div class="d-flex justify-content-center flex-column align-items-center">
 
-    <h3 class="text-center mt-5 font-semibold text-body-tertiary">Sign in to your Student WayIn </h3>
+    <h3 class="text-center mt-5 font-semibold text-dark-800">Sign in to your Student WayIn </h3>
 
     <div class="container-xs mt-3">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -32,6 +32,16 @@
             <%= f.label :remember_me %>
           </div>
         <% end %>
+
+        <hr/>
+
+        <div class="text-center">
+          <%= link_to "Forgot your password?", new_password_path(resource_name), :class => "text-md text-primary decoration-none" %> <i class="bi bi-arrow-up-right-circle text-md text-primary"></i><br />
+          <span class="text-md">
+            Don't have an account? <a href="/users/sign_up" class="text-md text-primary decoration-none">Create yours now. <i class="bi bi-arrow-up-right-circle"></i></a>
+          </span>
+        </div>
+
 
       <% end %>
 

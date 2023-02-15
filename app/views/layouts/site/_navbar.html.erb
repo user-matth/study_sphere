@@ -6,7 +6,9 @@
             </button>
 
             <div class="collapse navbar-collapse d-lg-flex" id="navbarsExample11">
-                <a class="navbar-brand col-lg-3 me-0 font-medium text-md" href="/">Student WayIn</a>
+                <a class="navbar-brand col-lg-3 me-0 font-medium text-md" href="/">
+                    <i class="bi bi-globe me-1"></i>Student WayIn
+                </a>
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                     <li class="nav-item ps-3 pe-3 position-relative" id="resources">
                         <a class="nav-link active font-medium text-md" href="/">
@@ -25,16 +27,16 @@
                         </a>
                         <div class="dropdown-menu align-items-stretch p-3 rounded-3 shadow-lg w-600px" id="resources-dropdown" style="min-width: 265px;">
                             <nav class="d-grid gap-2 col-12">
-                                <a href="/" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
+                                <a href="/forums" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
                                     <div>
                                         <strong class="d-block">Forum</strong>
-                                        <small>Talk with others users about your doubts</small>
+                                        <small>Discuss with others users about your doubts.</small>
                                     </div>
                                 </a>
                                 <a href="/" class="btn btn-hover-light rounded-2 d-flex align-items-center gap-3 py-2 px-3 lh-sm text-start">
                                     <div>
                                         <strong class="d-block">Classes</strong>
-                                        <small>Get the full period schedule</small>
+                                        <small>Get the full period schedule of the course.</small>
                                     </div>
                                 </a>
                             </nav>
@@ -48,7 +50,7 @@
                     <% if user_signed_in? %> 
                         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-dark font-medium text-sm" %>
                     <% else %>
-                        <a href="/users/sign_in" class="font-light text-md text-secondary decoration-none me-2">Sign in</a>
+                        <a href="/users/sign_in" class="font-light text-md text-secondary decoration-none me-3">Sign in</a>
                         <a href="/users/sign_up" class="btn btn-dark font-medium text-sm">Get Started — free</a>
                     <% end %>
                 </div>
@@ -56,3 +58,13 @@
         </div>
     </div>
 </nav>
+<% if current_page?(forums_path) %>
+    <div class="footer-bg w-100 pt-2 pb-2 text-center">
+        <span class="font-medium text-md">Welcome! Feel free to join our new and awesome features.</span>
+    </div>
+<% end %>
+<% if current_page?(new_forum_path) %>
+    <div class="footer-bg w-100 pt-2 pb-2 text-center">
+        <span class="font-medium text-md">Please make sure your question complies with the community guidelines. Learn more about our <a class="text-primary decoration-none">Community Rules</a>.</span>
+    </div>
+<% end %>
