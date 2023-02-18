@@ -3,9 +3,20 @@ class ForumsController < ApplicationController
 
   def index
     @forums = Forum.all
+    recommended_topics
+    @tags = Forum.tags.keys
+    @tags = @tags.map { |str| str.gsub('_', ' ') }
+    @tags = @tags.map(&:camelize)
   end
 
   def show
+    recommended_topics
+  end
+
+  def recommended_topics
+    @recommended_topics = Forum.tags.keys.to_a.take(5)
+    @recommended_topics = @recommended_topics.map { |str| str.gsub('_', ' ') }
+    @recommended_topics = @recommended_topics.map(&:camelize)
   end
 
   def new
@@ -17,6 +28,19 @@ class ForumsController < ApplicationController
 
   def create
     @forum = Forum.new(forum_params)
+    if current_user
+      @id = current_user.id
+
+      @username = current_user.username
+      username_string = @username.to_s
+
+      @course = current_user.course
+      course_string = @course.to_s
+    else
+      # redirect_to new_user_session_path, notice: 'You are not logged in.'
+    end
+    @forum.username = params[:username] || username_string
+    @forum.course = params[:course] || course_string
 
     respond_to do |format|
       if @forum.save
@@ -56,6 +80,6 @@ class ForumsController < ApplicationController
     end
 
     def forum_params
-      params.require(:forum).permit(:title, :description, :tags)
+      params.require(:forum).permit(:title, :description, :tags, :username, :course)
     end
 end

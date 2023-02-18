@@ -23,7 +23,8 @@
 
   <div class="mt-3">
     <%= form.label :tags, style: "display: block; margin-bottom: 5px;", :class => "text-md" %>
-    <%= form.text_field :tags, :class => "form-control text-md" %>
+    <!-- %= form.text_field :tags, :class => "form-control text-md" %-->
+    <%= form.select :tags, options_for_select(Forum.tags.keys.map { |c| [c.humanize, c] }), {}, class: 'form-select' %>
   </div>
 
   <div class="mt-4">

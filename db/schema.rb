@@ -10,13 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_14_235027) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_18_024026) do
   create_table "forums", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "tags"
+    t.integer "tags"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "course"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -41,6 +43,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_14_235027) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "course"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

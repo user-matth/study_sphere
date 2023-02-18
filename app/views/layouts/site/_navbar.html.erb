@@ -49,6 +49,7 @@
                 <div class="d-lg-flex col-lg-3 justify-content-lg-end align-items-center">
                     <% if user_signed_in? %> 
                         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-dark font-medium text-sm" %>
+                        <a href="/users/edit" class="text-dark decoration-none ms-3 me-3"><i class="bi bi-person"></i></a>
                     <% else %>
                         <a href="/users/sign_in" class="font-light text-md text-secondary decoration-none me-3">Sign in</a>
                         <a href="/users/sign_up" class="btn btn-dark font-medium text-sm">Get Started — free</a>

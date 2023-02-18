@@ -2,29 +2,38 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 pt-4">
-      <div class="p-3">
+      <div class="p-4 ps-0 pt-3">
+        <div class="swiper border-bottom mb-3 pb-4">
+          <div class="swiper-wrapper">
+          <% @tags.each do |tags| %>
+            <div class="swiper-slide w-auto"><p class="btn btn-sm btn-outline-dark text-sm fw-bold ps-3 pe-3 rounded-pill me-2 mb-0 mt-0"> <%= tags %></p></div>
+          <% end %>
+          </div>
+        </div>
 
         <% @forums.each do |forum| %>
-          <!-- p>
-            <%= link_to "Show this forum", forum %>
-          </!-->
-          <a href="/forums/<%= forum["id"]%>" class="decoration-none text-black">
-            <div class="d-flex flex-row align-items-center justify-content-between mb-2">
-              <div class="d-flex">
-                <div class="bg-dark-400 rounded-circle" style="width: 24px; height: 24px;"></div>
-                <p class="text-md mb-0 ms-2">User Full Name - Course <%= forum["id"]%></p>
+          <div class="border-bottom pt-4 pb-2 forum-box">
+            <!-- p>
+              <%= link_to "Show this forum", forum %>
+            </!-->
+            <a href="/forums/<%= forum["id"]%>" class="decoration-none text-black">
+              <div class="d-flex flex-row align-items-center justify-content-between mb-2">
+                <div class="d-flex">
+                  <i class="bi bi-globe" style="font-size: 20px;"></i>
+                  <p class="text-md mb-0 ms-2 lh-lg"><%= forum["username"]%> - <%= forum["course"]%></p>
+                </div>
+                <div class="d-block w-auto">
+                  <p class="text-md mb-0 ms-2 lh-lg"><%= forum["created_at"].strftime("%B %d, %Y") %></p>
+                </div>
               </div>
-              <div class="d-block w-auto">
-                <p class="text-md mb-0 ms-2"><%= forum["created_at"].strftime("%B %d, %Y") %></p>
-              </div>
-            </div>
-            <h4 class="font-bold"><%= forum["title"] %></h4>
-            <p class="text-md mt-2"><%= forum["description"] %></p>
-            
-            <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill">
-              <%= forum["tags"] %>
-            </p>
-          </a>
+              <h4 class="font-bold"><%= forum["title"] %></h4>
+              <p class="text-md mt-2"><%= forum["description"] %></p>
+              
+              <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill">
+                <%= forum["tags"] %>
+              </p>
+            </a>
+          </div>  
         <% end %>
         
       </div>  
@@ -37,11 +46,13 @@
         <div class="border-bottom pb-3 pt-3">
           <p class="text-lg font-semibold">Recommended topics</p>
           <div class="d-flex w-100 flex-wrap">
-            <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill me-2 mb-2"> Politics</p>
-            <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill me-2 mb-2"> Python</p>
+            <% @recommended_topics.each do |recommended_topics| %>
+              <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill me-2 mb-2"> <%= recommended_topics %></p>
+            <% end %>
+            <!-- p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill me-2 mb-2"> Python</>
             <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill me-2 mb-2"> Social Media</p>
             <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill me-2 mb-2"> Leadership</p>
-            <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill mb-2"> NFT</p>
+            <p class="btn btn-sm bg-dark-800 text-sm ps-3 pe-3 text-white rounded-pill mb-2"> NFT</p -->
           </div>
         </div>
         <div class="pb-3 pt-3">
