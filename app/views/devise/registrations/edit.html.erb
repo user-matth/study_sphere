@@ -2,10 +2,13 @@
   <div class="row">
     <div class="col-lg-8 pt-4">
       <div class="p-3">
-        <h2 class="font-bold">Edit my account</h2>
+        <h2 class="font-bold">Settings</h2>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 
+          <div class="border-bottom mb-3 pt-4 pb-2">
+            <span class="nav-link font-medium text-lg">Account</span>
+          </div>
           <div class="field">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "form-control" %>
@@ -31,7 +34,7 @@
           </div>
 
           <a class="btn btn-white btn-sm ps-0 " data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-            Change password
+            Change password?
           </a>
 
           <div class="collapse" id="collapseExample">
@@ -51,20 +54,21 @@
             </div>
           </div>  
 
-          <div class="actions mt-2">
+          <div class="actions mt-2 border-bottom pb-4">
             <%= f.submit "Update", :class => "btn btn-dark font-medium text-md"  %>
           </div>
+
+          <div class="d-flex flex-row justify-content-between">
+            <%= button_to "Delete account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-white text-md text-danger p-0 mt-3 mb-0" %>
+          </div>
+          <p class="text-sm mb-2">Deactivating will suspend your account until you sign back in.</p>
+          <% link_to "Back", :back, :class => "btn btn-outline-dark btn-sm text-sm" %>
         <% end %>
       </div>
     </div>
     <div class="col-lg-4 border-start pt-4">
       <div class="p-3">
-        <p class="text-lg font-semibold mt-2">Cancel my account</p>
-        <p class="text-md mb-2">Unhappy?</p>
-        <div class="d-flex flex-row justify-content-between">
-          <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, :class => "btn btn-dark btn-sm text-sm" %>
-          <%= link_to "Back", :back, :class => "btn btn-outline-dark btn-sm text-sm" %>
-        </div>
+        <p class="text-lg font-semibold mt-2">Suggested help articles</p>
       </div>
     </div>
   </div>
