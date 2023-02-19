@@ -36,11 +36,21 @@ class ForumsController < ApplicationController
 
       @course = current_user.course
       course_string = @course.to_s
+
+      @user_id = current_user.id
+      user_id = @user_id.to_s
+
+      @bio = current_user.bio
+      bio = @bio.to_s
+
+      @user_image = current_user.image
     else
       # redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
     @forum.username = params[:username] || username_string
     @forum.course = params[:course] || course_string
+    @forum.user_id = params[:user_id] || user_id
+    @forum.bio = params[:bio] || bio
 
     respond_to do |format|
       if @forum.save
@@ -80,6 +90,6 @@ class ForumsController < ApplicationController
     end
 
     def forum_params
-      params.require(:forum).permit(:title, :description, :tags, :username, :course)
+      params.require(:forum).permit(:title, :description, :tags, :username, :course, :user_image, :bio, :user_id)
     end
 end

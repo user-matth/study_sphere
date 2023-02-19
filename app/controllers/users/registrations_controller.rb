@@ -4,6 +4,20 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
+  def index
+    if current_user
+      @id = current_user.id
+
+      @username = current_user.username
+      username_string = @username.to_s
+
+      @email = current_user.email
+      email_string = @email.to_s      
+    else
+      # redirect_to new_user_session_path, notice: 'You are not logged in.'
+    end
+  end
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -47,7 +61,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :course])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :course, :bio, :image])
   end
 
   # The path used after sign up.

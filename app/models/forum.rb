@@ -70,4 +70,6 @@ class Forum < ApplicationRecord
         :ux_design,
         :writing,
         :writing_tips ]
+
+    has_one_attached :user_image
 end
