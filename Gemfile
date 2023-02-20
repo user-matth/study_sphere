@@ -35,3 +35,4 @@ end
 # Added Gems
 gem "devise", "~> 4.8"
 gem 'sass-rails', '>= 6'
+gem 'ransack'

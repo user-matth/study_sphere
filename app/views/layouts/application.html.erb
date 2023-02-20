@@ -18,6 +18,26 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="https://cdn.tiny.cloud/1/cerc2w8y99ahd6vpdgmsqr0zsy0griu3lgz5buw0qugctf6j/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: 'textarea#description',
+        height: 500,
+        menubar: false,
+        plugins: [
+          'advlist autolink lists link image charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table paste code help wordcount'
+        ],
+          toolbar: 'undo redo | formatselect | ' +
+          ' bold italic backcolor | alignleft aligncenter ' +
+          ' alignright alignjustify | bullist numlist outdent indent | ' +
+          ' removeformat | help'
+      });
+    </script>
+
   </head>
 
   <body>
@@ -25,6 +45,38 @@
     <%= yield %>
     <%= render "layouts/site/footer" %>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-element-bundle.min.js"></script>
+    <script>
+      const swiperEl = document.querySelector('swiper-container')
+      Object.assign(swiperEl, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+          clickable: true,
+        },
+        breakpoints: {
+          "@0.00": {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          "@0.75": {
+            slidesPerView: 2,
+            spaceBetween: 0,
+          },
+          "@1.00": {
+            slidesPerView: 3,
+            spaceBetween: 0,
+          },
+          "@1.50": {
+            slidesPerView: 4,
+            spaceBetween: 0,
+          },
+        },
+      });
+
+      swiperEl.initialize();
+    </script>
+
     <script>
       var swiper = new Swiper('.swiper', {
         slidesPerView: 3,

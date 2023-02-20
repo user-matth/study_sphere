@@ -90,6 +90,10 @@ footer {
     color: rgb(28, 28, 30) !important;
 }
 
+.text-link {
+    color: #06c!important;
+}
+
 .bg-dark-300 {
     background-color: rgb(142, 142, 147) !important;
 }
@@ -172,6 +176,26 @@ footer {
     display        : flex;
     justify-content: center;
     align-items    : center;
+}
+
+.ellipsis-3 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.card-h:hover {
+    transform: scale(1.02);
+    transition: ease-in-out .3s;
+}
+.card-h {
+    transition: ease-in-out .3s;
+}
+
+.lastchild-border-bottom:last-child {
+    border: none!important;
 }
 
 @media (max-width: 760px) {

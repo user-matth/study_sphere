@@ -20,7 +20,7 @@
               <div class="d-flex flex-row align-items-center justify-content-between mb-2">
                 <div class="d-flex">
                   <i class="bi bi-globe" style="font-size: 20px;"></i>
-                  <p class="text-md mb-0 ms-2 lh-lg"><%= forum["username"]%> - <%= forum["course"]%></p>
+                  <p class="text-md mb-0 ms-2 lh-lg"><%= forum["username"]%> - <%= forum["course"].humanize %></p>
                 </div>
                 <div class="d-block w-auto">
                   <p class="text-md mb-0 ms-2 lh-lg"><%= forum["created_at"].strftime("%B %d, %Y") %></p>
@@ -63,5 +63,3 @@
     </div>
   </div>
 </div>
-
-

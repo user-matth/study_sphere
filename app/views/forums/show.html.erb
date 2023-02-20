@@ -27,7 +27,13 @@
             </div>
           </div>
           <p class="text-sm w-75"><%= @forum["bio"] %></p>
-          <a class="btn btn-outline-dark btn-sm w-auto ps-4 pe-4 rounded-pill"><i class="bi bi-envelope-fill"></i></a>
+          <div class="d-flex">
+            <a class="btn btn-outline-dark btn-sm w-auto ps-4 pe-4 rounded-pill"><i class="bi bi-envelope-fill"></i></a>
+            <% if @current_id == @forum_user_id %>
+              <%= button_to "Delete this forum", @forum, method: :delete, :class => "btn btn-outline-danger btn-sm w-auto rounded-pill ms-2" %>
+            <% else %>
+            <% end %>
+          </div>
         </div>
         <div class="border-bottom pb-3 pt-3">
           <p class="text-lg font-semibold">Recommended topics</p>
@@ -48,11 +54,22 @@
 
 <div class="offcanvas offcanvas-end p-4" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasRightLabel">Responses (15)</h5>
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">Responses</h5>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <div class="btn-group">
+    <div class="card border-0 rounded-3 shadow ">
+      <div class="card-body">
+        <div class="d-flex flex-row align-items-center">
+          <%= image_tag(current_user.image, style:"height: 32px; width: 32px; border-radius: 50%; object-fit: cover;") %>
+          <h6 class="card-subtitle ms-2 text-md text-black"><%= current_user.username%></h6>
+        </div>
+
+        <%= render "comments/form", comment: @comment%>
+
+      </div>
+    </div>
+    <div class="btn-group mt-4">
       <button type="button" class="btn btn-sm dropdown-toggle p-0" data-bs-toggle="dropdown" aria-expanded="false">
         Most relevant
       </button>
@@ -60,6 +77,22 @@
         <li><a class="dropdown-item" href="#">Most relevant</a></li>
         <li><a class="dropdown-item" href="#">Most recent</a></li>
       </ul>
+    </div>
+    <div class="d-block">
+      <%- @forum.comments.each do |comment|%>
+        <div class="pt-3 pb-3 border-bottom lastchild-border-bottom">
+          <div class="d-flex align-items-center">
+            <div class="d-block">
+              <i class="bi bi-globe" style="font-size: 35px;"></i>
+            </div>
+            <div class="d-block ms-2">
+              <p class="mb-0"><%= comment.user_name %></p>
+              <p class="text-md mb-0"><%= comment.created_at %></p>
+            </div>
+          </div>
+          <%= comment.body %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

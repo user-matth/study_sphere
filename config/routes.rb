@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :forum_categories
   # DEVISE
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
@@ -7,5 +6,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   # PUBLIC
-  resources :forums
+  resources :forums do
+    resources :comments, only: [:create]
+  end
+  resources :comments
 end

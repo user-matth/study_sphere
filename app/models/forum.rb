@@ -1,6 +1,5 @@
 class Forum < ApplicationRecord
     enum tags: [ 
-        :computer_science,
         :artificial_intelligence,
         :android,
         :art,
@@ -72,4 +71,5 @@ class Forum < ApplicationRecord
         :writing_tips ]
 
     has_one_attached :user_image
+    has_many :comments, dependent: :destroy
 end

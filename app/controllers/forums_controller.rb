@@ -1,6 +1,7 @@
 class ForumsController < ApplicationController
   before_action :set_forum, only: %i[ show edit update destroy ]
-
+  before_action :recommended_topics
+  
   def index
     @forums = Forum.all
     recommended_topics
@@ -11,6 +12,9 @@ class ForumsController < ApplicationController
 
   def show
     recommended_topics
+    @comment = @forum.comments.build
+    @current_id = current_user.id.to_s
+    @forum_user_id = @forum["user_id"].to_s
   end
 
   def recommended_topics

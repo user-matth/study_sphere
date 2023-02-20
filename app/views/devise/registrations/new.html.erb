@@ -18,13 +18,13 @@
         </div>
 
         <div class="field mt-2">
-          <%= f.label :course %><br />
-          <%= f.text_field :course, :class => "form-control" %>
+          <%= f.label :email %><br />
+          <%= f.email_field :email, :class => "form-control" %>
         </div>
 
         <div class="field mt-2">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, :class => "form-control" %>
+          <%= f.label :course %><br />
+          <%= f.select :course, options_for_select(User.courses.keys.map { |c| [c.humanize, c] }), {}, class: 'form-select', autocomplete: "course"  %>
         </div>
 
         <div class="field mt-2">

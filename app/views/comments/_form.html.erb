@@ -1,0 +1,11 @@
+<%= form_with(model: comment) do |form| %>
+  
+  <%= form.hidden_field :forum_id %>
+
+  <% form.label :body, "Corpo de texto:" %>
+  <%= form.text_area :body, :class => "form-control mt-2 text-md", :cols => 80, :rows => 3, :placeholder => "What are your thoughts?"%>
+
+  <div>
+    <%= form.submit "Send", :class => "btn btn-sm btn-dark ps-3 pe-3 rounded-pill mt-2" %>
+  </div>
+<% end %>

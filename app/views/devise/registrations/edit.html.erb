@@ -91,7 +91,13 @@
     </div>
     <div class="col-lg-4 border-start pt-4">
       <div class="p-3">
-        <div class="d-block" style="width: 88px; height: 88px;"><%= image_tag(current_user.image, style:"height: 88px; width: 88px; border-radius: 50%; object-fit: cover;") %></div>
+        <div class="d-block" style="width: 88px; height: 88px;">
+          <% if current_user.image.attached? %>
+            <%= image_tag(current_user.image, style:"height: 88px; width: 88px; border-radius: 50%; object-fit: cover;") %>
+          <% else %>
+            <i class="bi bi-person fs-1"></i>
+          <% end %>
+        </div>
         <p class="text-lg font-semibold mt-2 mb-0"><%= current_user.username %></p>
         <p class="text-md mt-0 fst-italic"><%= current_user.course.humanize %></p>
         <p class="text-md mt-2"><%= current_user.bio %></p>
@@ -142,12 +148,12 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
           <div class="d-flex align-items-center">
-            <div style="width: 88px; position: relative;">
+            <div style="width: 88px; position: relative;" class="d-flex flex-column">
               <%= f.label "Photo", :class => "text-md mb-0" %>
               <% if current_user.image.attached? %>
                 <%= image_tag(current_user.image, style:"height: 88px; width: 88px; border-radius: 50%; object-fit: cover;") %>
               <% else %>
-                <i class="bi bi-person fs-4"></i>
+                <i class="bi bi-person fs-2"></i>
               <% end %>
               <%= f.file_field :image, autofocus: true, autocomplete: "username", :style => "opacity: 0; position: absolute; left: 0; width: 88px; height: 88px; border-radius: 50%;" %>
             </div>

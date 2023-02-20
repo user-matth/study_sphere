@@ -35,5 +35,5 @@ class User < ApplicationRecord
       :civil_engineering,
       :mechatronic_engineering,
      ]
-
+     
 end

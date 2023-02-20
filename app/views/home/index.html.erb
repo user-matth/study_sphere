@@ -1,28 +1,79 @@
-<div class="container">
-  <div class="text-center mt-16">
-    <h1 class="home-hd font-bold">Make your doubts</h1>
-    <h1 class="home-hd font-bold">become answers</h1>
-  </div>
-  <div class="text-center">
-    <img src="https://atacadogames.com/imagem/apple/apple-macbook-pro-mnep3ll-a-m2-memoria-ram-8gb-ssd-256gb-tela-13-3-silver-2022/2/140033.jpg?pfdrid_c=true" width="100%" style="height: 925px; overflow: hidden; object-fit: cover;">
-  </div>
-  <div class="p-5 footer-bg">
-    <div class="row">
-      <div class="col-lg-8">
-        <h1>Welcome to Student Way In</h1>
-        <p>The ultimate online platform designed specifically for students!</p>
-        <p>We understand that being a student can be tough and overwhelming, with endless assignments, projects, and exams to tackle. That's why we've created a one-stop-shop that offers all the tools and resources you need to succeed in your academic journey.</p>
-        <p>Our platform features a user-friendly interface and offers a range of features, including:</p>
-        <p>Forums: Connect with students from all over the world, share your experiences and knowledge, and ask for help on any topic. Our forums provide a supportive and engaging community where you can collaborate and grow together.</p>
-        <p>Study Groups: Struggling to keep up with coursework? Join a study group and work together with other students to achieve your goals. With a variety of subjects to choose from, you'll find the perfect group for you.</p>
-        <p>And much more! Click here to 
-          <a href="/users/sign_in" class="text-primary decoration-none">Sign in
-          </a>.
-        </p>
-        
+<div class="d-block">
+  <div class="container">
+    <div class="text-center mt-16">
+      <h1 class="home-hd font-bold">Make your doubts</h1>
+      <h1 class="home-hd font-bold">become answers</h1>
+    </div>
+    <div class="text-center">
+      <%= image_tag "hero-bg.png", style: 'height: 925px; overflow: hidden; object-fit: cover; width: 100%;' %>
+    </div>
+    <div class="p-5">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 style="font-size: 48px" class="text-secondary font-semibold"><span class="text-black">Study.</span> The best place to clear your doubts.</h1>
+        </div>
+        <div class="col-lg-4">
+          <div class="h-100 d-flex flex-column justify-content-center">
+            <div class="d-flex flex-row alig-items-center">
+                <div class="d-flex flex-column alig-items-center">
+                  <img src="https://gifdb.com/images/file/waving-hand-emoticon-bye-iv3dmo7t5vdlvr8m.gif" style="width: 35px; height: 35px; object-fit: cover; border-radius: 50%;">
+                </div>
+                <div class="d-flex flex-column ms-2">
+                  <p class="mb-0 text-md font-semibold">Need any help?</p>
+                  <a class="mb-0 text-md text-link decoration-none pointer">Ask to anyone.</a>
+                </div>
+            </div>
+            <div class="d-flex flex-row alig-items-center mt-2">
+                <div class="d-flex flex-column alig-items-center">
+                  <i class="bi bi-chat-left fs-3 text-secondary"></i>
+                </div>
+                <div class="d-flex flex-column ms-3">
+                  <p class="mb-0 text-md font-semibold">Visit our Foum!</p>
+                  <a class="mb-0 text-md text-link decoration-none pointer">Clear your doubts.</a>
+                </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-4">
-        <%= image_tag "Humaaans - Sitting.png", style: 'transform: scaleX(-1);' %>
+      <div class="d-block mt-5">
+        <h4 class="text-secondary font-semibold"><span class="text-black">The latest.</span> Take a look at what’s new, right now.</h4>
+        <swiper-container class="mySwiper" init="false">
+          <% @forums.each do |forum| %>
+            <swiper-slide class="pb-5 pt-3 pe-3 ps-3">
+              <div class="card card-h border-0 rounded-4 p-2 pointer" style="box-shadow: 2px 3px 12px rgb(0 0 0 / 8%);">
+                <div class="card-body">
+                  <a href="/forums/<%= forum["id"]%>" class="decoration-none text-black" style="width: 100%; height: 100%; display: block; position: absolute; top: 0; left: 0;">
+                    <a class="btn btn-outline-dark btn-sm text-sm rounded-pill ps-3 pe-3 mb-2"><%= forum["tags"].humanize %></a>
+                    <h5 class="card-title ellipsis-3 fw-bold"><%= forum["title"] %></h5>
+                    <p class="card-text ellipsis-3">❝ <%= forum["description"] %> ❞</p>
+                    <p class="card-text ellipsis-3 text-md mb-0 font-semibold">- <%= forum["username"] %></p>
+                    <p class="card-text ellipsis-3 text-sm">✱ <span class="fst-italic"><%= forum["course"].humanize %></span></p>
+                  </a>
+                </div>
+              </div>
+            </swiper-slide>
+          <% end %>
+        </swiper-container>
+      </div>
+    </div>
+    <div class="p-5 footer-bg">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Welcome to Student Way In</h1>
+          <p>The ultimate online platform designed specifically for students!</p>
+          <p>We understand that being a student can be tough and overwhelming, with endless assignments, projects, and exams to tackle. That's why we've created a one-stop-shop that offers all the tools and resources you need to succeed in your academic journey.</p>
+          <p>Our platform features a user-friendly interface and offers a range of features, including:</p>
+          <p>Forums: Connect with students from all over the world, share your experiences and knowledge, and ask for help on any topic. Our forums provide a supportive and engaging community where you can collaborate and grow together.</p>
+          <p>Study Groups: Struggling to keep up with coursework? Join a study group and work together with other students to achieve your goals. With a variety of subjects to choose from, you'll find the perfect group for you.</p>
+          <p>And much more! Click here to 
+            <a href="/users/sign_in" class="text-primary decoration-none">Sign in
+            </a>.
+          </p>
+          
+        </div>
+        <div class="col-lg-4">
+          <%= image_tag "Humaaans - Sitting.png", style: 'transform: scaleX(-1);' %>
+        </div>
       </div>
     </div>
   </div>
