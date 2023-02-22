@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @support %>
+
+<div>
+  <%= link_to "Edit this support", edit_support_path(@support) %> |
+  <%= link_to "Back to supports", supports_path %>
+
+  <%= button_to "Destroy this support", @support, method: :delete %>
+</div>

@@ -8,13 +8,20 @@ class ForumsController < ApplicationController
     @tags = Forum.tags.keys
     @tags = @tags.map { |str| str.gsub('_', ' ') }
     @tags = @tags.map(&:camelize)
+
+    @q = Forum.ransack(params[:q])
+    @forums = @q.result(distinct: true)
   end
 
   def show
     recommended_topics
-    @comment = @forum.comments.build
-    @current_id = current_user.id.to_s
-    @forum_user_id = @forum["user_id"].to_s
+    if current_user
+      @comment = @forum.comments.build
+      @current_id = current_user.id.to_s
+      @forum_user_id = @forum["user_id"].to_s
+    else
+      redirect_to new_user_session_path, notice: 'You are not logged in.'
+    end
   end
 
   def recommended_topics
@@ -49,7 +56,7 @@ class ForumsController < ApplicationController
 
       @user_image = current_user.image
     else
-      # redirect_to new_user_session_path, notice: 'You are not logged in.'
+      redirect_to new_user_session_path, notice: 'You are not logged in.'
     end
     @forum.username = params[:username] || username_string
     @forum.course = params[:course] || course_string

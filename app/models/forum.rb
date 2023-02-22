@@ -1,4 +1,10 @@
 class Forum < ApplicationRecord
+    def self.ransackable_attributes(auth_object = nil)
+        ["encrypted_password", "password_reset_token", "comments", "user_image_attachment", "user_image_blob", "owner"]
+    end
+    def self.ransackable_associations(auth_object = nil)
+        ["comments", "user_image_attachment", "user_image_blob"]
+    end
     enum tags: [ 
         :artificial_intelligence,
         :android,

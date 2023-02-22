@@ -20,7 +20,7 @@
                 </div>
                 <div class="d-flex flex-column ms-2">
                   <p class="mb-0 text-md font-semibold">Need any help?</p>
-                  <a class="mb-0 text-md text-link decoration-none pointer">Ask to anyone.</a>
+                  <a href="/forums" class="mb-0 text-md text-link decoration-none pointer">Ask to anyone.</a>
                 </div>
             </div>
             <div class="d-flex flex-row alig-items-center mt-2">
@@ -28,8 +28,8 @@
                   <i class="bi bi-chat-left fs-3 text-secondary"></i>
                 </div>
                 <div class="d-flex flex-column ms-3">
-                  <p class="mb-0 text-md font-semibold">Visit our Foum!</p>
-                  <a class="mb-0 text-md text-link decoration-none pointer">Clear your doubts.</a>
+                  <p class="mb-0 text-md font-semibold">Visit our Forum!</p>
+                  <a href="/forums" class="mb-0 text-md text-link decoration-none pointer">Clear your doubts.</a>
                 </div>
             </div>
           </div>
@@ -37,7 +37,7 @@
       </div>
       <div class="d-block mt-5">
         <h4 class="text-secondary font-semibold"><span class="text-black">The latest.</span> Take a look at what’s new, right now.</h4>
-        <swiper-container class="mySwiper" init="false">
+        <swiper-container class="mySwiper mt-4" init="false">
           <% @forums.each do |forum| %>
             <swiper-slide class="pb-5 pt-3 pe-3 ps-3">
               <div class="card card-h border-0 rounded-4 p-2 pointer" style="box-shadow: 2px 3px 12px rgb(0 0 0 / 8%);">
@@ -55,25 +55,100 @@
           <% end %>
         </swiper-container>
       </div>
+      <div class="d-block mt-5">
+        <h4 class="text-secondary font-semibold"><span class="text-black">Help is here.</span> Whenever and however you need it.</h4>
+        <div class="d-flex mt-4">
+          <div class="d-block w-75">
+            <div class="p-2">
+              <button data-bs-toggle="modal" href="#exampleModal" class="text-black decoration-none bg-transparent border-0 p-0" style="text-decoration: none!important;">
+                <div class="card card-h border-0 rounded-4 p-2 pointer" style="box-shadow: 2px 3px 12px rgb(0 0 0 / 8%);">
+                  <div class="card-body text-start">
+                    <a class="text-sm text-uppercase font-semibold text-black decoration-none">dear Student, welcome</a>
+                    <h4 class="card-title ellipsis-3 font-semibold mt-2">Study with your colleague. Anywhere, and whenever you want.</h4>
+                    <p class="mb-2">The ultimate online platform designed specifically for students!</p>
+                    <p class="mb-2">We understand that being a student can be tough and overwhelming, with endless assignments, projects, and exams to tackle. That's why we've created a one-stop-shop that offers all the tools and resources you need to succeed in your academic journey.</p>
+                    <p class="mb-2">Our platform features a user-friendly interface and offers a range of features, including:</p>
+                    <p class="mb-2">Forums: Connect with students from all over the world, share your experiences and knowledge, and ask for help on any topic. Our forums provide a supportive and engaging community where you can collaborate and grow together.</p>
+                    <p class="mb-2">Study Groups: Struggling to keep up with coursework? Join a study group and work together with other students to achieve your goals. With a variety of subjects to choose from, you'll find the perfect group for you.</p>
+                    <% if user_signed_in? %> 
+                    <% else %>
+                      <p class="mb-2">And much more! Click here to <a href="/users/sign_in" class="text-primary decoration-none">Sign in</a>.</p>
+                    <% end %>
+                    <p class="card-text ellipsis-3 text-md mb-0 font-semibold"></p>
+                    <p class="card-text ellipsis-3 text-sm"></p>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+          <div class="d-flex flex-column w-50">
+            <div class="p-2 h-50">
+              <div class="card card-h border-0 rounded-4 p-2 pointer h-100" style="box-shadow: 2px 3px 12px rgb(0 0 0 / 8%); overflow: hidden;">
+                <div class="card-body">
+                  <h4 class="card-title font-semibold mt-2 mb-0">Unlock your academic potential with Study Sphere -</h4>
+                  <p>where learning meets community.</p>
+                  <div class="d-flex align-items-center" style="position: absolute; bottom: 0; right: -55px; height: 182px;">
+                    <i class=" ms-2 mw-2 bi bi-circle" style="font-size: 80px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle-half" style="font-size: 90px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle-fill" style="font-size: 80px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-globe" style="font-size: 90px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle" style="font-size: 80px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle-half" style="font-size: 90px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle-fill" style="font-size: 80px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-globe" style="font-size: 90px;"></i>
+                  </div>
+                  <div class="d-flex align-items-center" style="position: absolute; bottom: 0; right: 0px; height: 0px;">
+                    <i class=" ms-2 mw-2 bi bi-circle" style="font-size: 80px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle-half" style="font-size: 90px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle-fill" style="font-size: 80px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-globe" style="font-size: 90px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle" style="font-size: 80px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle-half" style="font-size: 90px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-circle-fill" style="font-size: 80px;"></i>
+                    <i class=" ms-2 mw-2 bi bi-globe" style="font-size: 90px;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-2 h-50">
+              <div class="card card-h border-0 rounded-4 p-2 pointer h-100" style="box-shadow: 2px 3px 12px rgb(0 0 0 / 8%); background-color: #393939; background-image: linear-gradient(0deg, #393939 0%, #000000 100%); overflow: hidden; ">
+                <div class="card-body">
+                  <h4 class="card-title font-semibold mt-2 text-white">Join the discussion and find your path to success with Study Sphere -</h4>
+                  <p class="text-white">your ultimate student resource hub.</p>
+                  <i class="bi bi-globe text-white" style="position: absolute; bottom: 0; right: -25px; font-size: 180px!important; height: 180px;"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="d-block mt-5">
+        <h4 class="font-semibold text-black">Quick Links</h4>
+        <a href="/forums" class="btn btn-sm button-secondary ps-3 pe-3 text-md rounded-pill" style="background: #e8e8ed;">Forums</a>
+      </div>
     </div>
-    <div class="p-5 footer-bg">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1>Welcome to Student Way In</h1>
-          <p>The ultimate online platform designed specifically for students!</p>
-          <p>We understand that being a student can be tough and overwhelming, with endless assignments, projects, and exams to tackle. That's why we've created a one-stop-shop that offers all the tools and resources you need to succeed in your academic journey.</p>
-          <p>Our platform features a user-friendly interface and offers a range of features, including:</p>
-          <p>Forums: Connect with students from all over the world, share your experiences and knowledge, and ask for help on any topic. Our forums provide a supportive and engaging community where you can collaborate and grow together.</p>
-          <p>Study Groups: Struggling to keep up with coursework? Join a study group and work together with other students to achieve your goals. With a variety of subjects to choose from, you'll find the perfect group for you.</p>
-          <p>And much more! Click here to 
-            <a href="/users/sign_in" class="text-primary decoration-none">Sign in
-            </a>.
-          </p>
-          
-        </div>
-        <div class="col-lg-4">
-          <%= image_tag "Humaaans - Sitting.png", style: 'transform: scaleX(-1);' %>
-        </div>
+  </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered border-0 modal-lg">
+    <div class="modal-content border-0 rounded-4">
+      <div class="modal-header border-0" style="height: 55px;">
+        <button type="button" class="border-0 btn btn-white ps-0 pe-0 mt-3 ms-1" data-bs-dismiss="modal">
+          <span style="background: #e8e8ed; border-radius: 50%; color: #6e6e73; display: flex; align-items: center; height: 36px; width: 36px; outline: none; position: relative;">
+            <svg width="21" height="21" class="as-svgicon as-svgicon-close as-svgicon-tiny as-svgicon-closetiny" role="img" aria-hidden="true" style="fill: currentColor; position: absolute; left: 50%; transform: translateX(-50%); height: 20px; width: 20px;">
+              <path fill="none" d="M0 0h21v21H0z"></path>
+              <path d="M12.12 10l4.07-4.06a1.5 1.5 0 10-2.11-2.12L10 7.88 5.94 3.81a1.5 1.5 0 10-2.12 2.12L7.88 10l-4.07 4.06a1.5 1.5 0 000 2.12 1.51 1.51 0 002.13 0L10 12.12l4.06 4.07a1.45 1.45 0 001.06.44 1.5 1.5 0 001.06-2.56z"></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="modal-body border-0 pb-4 ps-5 pe-5">
+        <h2 class="font-semibold" id="exampleModalLabel">Students interested in learning are here!</h2>
+        <p>
+          Welcome to our community! We are thrilled to have you here and look forward to seeing you engage with our content and fellow members. Feel free to introduce yourself, share your thoughts, and participate in our discussions. Our goal is to create a friendly and inclusive space where everyone feels welcome and comfortable expressing themselves. If you have any questions or concerns, please don't hesitate to reach out to our team. Thank you for joining us and we hope you enjoy your time here at our community!
+        <p>
+        <a href="/forums" class="decoration-none">See what people are talking.</a>
       </div>
     </div>
   </div>

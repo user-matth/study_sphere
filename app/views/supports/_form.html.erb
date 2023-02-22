@@ -1,0 +1,17 @@
+<%= form_with(model: support) do |form| %>
+  <% if support.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(support.errors.count, "error") %> prohibited this support from being saved:</h2>
+
+      <ul>
+        <% support.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,18 +1,24 @@
 <footer>
     <div class="container-fw border-top pt-3 pb-0 mt-5">
-        <div class="container pt-2 pb-4 text-md">
-            <span>
-                Need help? <a class="text-primary decoration-none">Contact us</a> or call 0800-000-0000
-            </span>
-        </div>
-        <div class="footer-bg">
-            <div class="container pt-5 pb-5 text-md">
+        <% if current_page?(forums_path || new_forum_path || forum_comments_path || edit_forum_path || forum_path) %>
+            <div class="container pt-2 pb-4 text-md">
                 <span>
-                    The Student Way In uses industry-standard encryption technology to protect the confidentiality of submitted information. Learn more about our <a class="text-primary decoration-none">Security Policy.</a>
+                    Need help? <a class="text-primary decoration-none">Contact us</a> or call 0800-000-0000
+                </span>
+            </div>
+        <% else %>
+            <div class="container pt-2 pb-4 text-sm d-flex flex-column text-secondary">
+                <span>Your security and privacy are of utmost importance to us. We take great care to ensure that all personal data collected on this website is stored and processed securely, in accordance with our privacy policy. By using this website, you agree to our terms of use and privacy policy. If you have any questions or concerns about our security practices or policies, please contact us.</span>
+            </div>
+        <% end %>
+        <div class="footer-bg">
+            <div class="container pt-4 pb-4 text-sm">
+                <span>
+                    The Study Sphere uses industry-standard encryption technology to protect the confidentiality of submitted information. Learn more about our <a class="text-primary decoration-none">Security Policy.</a>
                 </span>
                 <hr/>
                 <span>
-                    Copyright © 2023 Student Way In. All Rights Reserved.
+                    Copyright © 2023 Study Sphere. All Rights Reserved.
                 </span>
             </div>
         </div>

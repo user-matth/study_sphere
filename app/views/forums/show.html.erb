@@ -86,8 +86,8 @@
               <i class="bi bi-globe" style="font-size: 35px;"></i>
             </div>
             <div class="d-block ms-2">
-              <p class="mb-0"><%= comment.user_name %></p>
-              <p class="text-md mb-0"><%= comment.created_at %></p>
+              <p class="mb-0 text-md font-semibold"><%= comment.user_name %></p>
+              <p class="text-md mb-0 text-md" id="created_at"><%= comment.created_at %></p>
             </div>
           </div>
           <%= comment.body %>
@@ -96,3 +96,10 @@
     </div>
   </div>
 </div>
+
+<script>
+  var dateValue = document.querySelectorAll("#created_at")
+  dateValue = dateValue.innerHTML
+  var fullDate = dateValue.slice(0, 10)
+  console.log(fullDate)
+</script>

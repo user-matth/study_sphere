@@ -198,6 +198,38 @@ footer {
     border: none!important;
 }
 
+.button-secondary {
+    background: #e8e8ed;
+    color: #000;
+}
+
+.button-secondary:hover {
+    background: #ebebf0;
+}
+
+.form-icons-search15 {
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2018%2025%22%20fill%3D%22rgb%28134%2C134%2C139%29%22%20style%3D%22%22%3E%20%3Ctitle%3Emagnifyingglass_reduced%401x%3C%2Ftitle%3E%20%3Cg%20transform%3D%22translate%280%2C%20-2.75%29%22%3E%20%3Crect%20width%3D%2218%22%20height%3D%2225%22%20fill%3D%22none%22%2F%3E%20%3Cpath%20d%3D%22M17.512%2C20.113l-4.786-4.788a7.068%2C7.068%2C0%2C1%2C0-.777.778l4.785%2C4.788a.55.55%2C0%2C1%2C0%2C.777-.777ZM1.427%2C10.75A5.946%2C5.946%2C0%2C1%2C1%2C7.373%2C16.7%2C5.957%2C5.957%2C0%2C0%2C1%2C1.427%2C10.75Z%22%2F%3E%20%3C%2Fg%3E%20%3C%2Fsvg%3E");
+    background-size: 15px;
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+}
+
+.as-search-form-submit {
+    position: absolute;
+    z-index: 1;
+    cursor: default;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: opacity 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-color: transparent;
+    border: none;
+    left: 1rem;
+    top: 0.95rem;
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
 @media (max-width: 760px) {
     .swiper-button-next {
         right    : 20px;
