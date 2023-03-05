@@ -12,7 +12,7 @@
 </p>
 
 ![Cover](https://i.ibb.co/2n8cMnZ/github-hero-1.jpg)
-![Second Cover](https://i.ibb.co/HYkp9HR/github.jpg)
+![Second Cover](https://i.ibb.co/PgVnQ6F/github.jpg)
 <p align="center">Don't forget to leave a star ⭐!</p>
 
 ## Features
